@@ -116,7 +116,8 @@ class _ModalContent extends StatelessWidget {
       if (Utils.isIOS) {
         return ModalWalletIOSPage(uri: uri, walletCallback: walletCallback);
       } else if (Utils.isAndroid) {
-        return ModalWalletAndroidPage(uri: uri);
+        return ModalWalletIOSPage(uri: uri, walletCallback: walletCallback);
+        // return ModalWalletAndroidPage(uri: uri);
       } else {
         return ModalWalletDesktopPage(uri: uri, walletCallback: walletCallback);
       }
