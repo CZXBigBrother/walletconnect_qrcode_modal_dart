@@ -115,7 +115,7 @@ class ModalWalletIOSPage extends StatelessWidget {
     Future<bool> shouldShow(wallet) async =>
         await Utils.openableLink(wallet.mobile.universal) ||
         await Utils.openableLink(wallet.mobile.native) ||
-        await Utils.openableLink(wallet.app.ios);
+        await Utils.openableLink(Utils.isIOS ? wallet.app.ios : wallet.app.android);
 
     return store.load().then(
       (wallets) async {
